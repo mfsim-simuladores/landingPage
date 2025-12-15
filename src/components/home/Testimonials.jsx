@@ -1,23 +1,6 @@
 import { motion } from 'framer-motion';
 import { Star, User } from 'lucide-react';
-
-const testimonials = [
-    {
-        name: 'João P., Piloto Comercial',
-        quote: 'A precisão do simulador MFSim é impressionante. Foi uma ferramenta crucial na minha preparação para os exames práticos.',
-        avatar: '',
-    },
-    {
-        name: 'Carlos E., Entusiasta de Aviação',
-        quote: 'Nunca imaginei que poderia ter uma experiência tão realista em casa. O suporte da equipe MFSim foi excelente durante a montagem.',
-        avatar: '',
-    },
-    {
-        name: 'Escola de Aviação Céu Azul',
-        quote: 'Adquirimos dois simuladores para nossa escola. A qualidade do treinamento dos nossos alunos melhorou significativamente. Equipamento robusto e confiável.',
-        avatar: '',
-    },
-];
+import { useTranslation } from 'react-i18next';
 
 const cardVariants = {
     offscreen: { y: 100, opacity: 0 },
@@ -33,6 +16,26 @@ const cardVariants = {
   };
 
 const Testimonials = () => {
+    const { t } = useTranslation();
+
+    const testimonials = [
+        {
+            name: t('testimonial_1_name'),
+            quote: t('testimonial_1_quote'),
+            avatar: '',
+        },
+        {
+            name: t('testimonial_2_name'),
+            quote: t('testimonial_2_quote'),
+            avatar: '',
+        },
+        {
+            name: t('testimonial_3_name'),
+            quote: t('testimonial_3_quote'),
+            avatar: '',
+        },
+    ];
+
     return (
         <section className="py-12 sm:py-20 bg-mfsim-dark">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 transform scale-90 origin-top">
@@ -44,10 +47,10 @@ const Testimonials = () => {
                     className="text-center"
                 >
                     <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-                        Aprovado por quem <span className="text-mfsim-cyan">Voa de Verdade</span>
+                        {t('testimonials_title_prefix')} <span className="text-mfsim-cyan">{t('testimonials_title_suffix')}</span>
                     </h2>
                      <p className="mt-4 max-w-2xl mx-auto text-lg text-mfsim-grey">
-                        Veja o que nossos clientes dizem sobre a experiência MFSim.
+                        {t('testimonials_desc')}
                     </p>
                 </motion.div>
 

@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import YouTube from 'react-youtube';
 
 const AboutUs = () => {
+    const { t } = useTranslation();
     const videoId = "wAmI4ihyw2s";
     const playerOptions = {
       height: '100%',
@@ -31,21 +33,20 @@ const AboutUs = () => {
                         transition={{ duration: 0.8, ease: "easeOut" }}
                     >
                         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-                            Nascemos da Paixão pela <span className="text-mfsim-cyan">Aviação</span>
+                            {t('about_title_prefix')} <span className="text-mfsim-cyan">{t('about_title_suffix')}</span>
                         </h2>
                         <p className="mt-6 text-lg text-mfsim-grey">
-                            A MFSim é mais do que uma empresa; é a realização de um sonho. Fundada por entusiastas e especialistas em engenharia, nossa jornada começou com o objetivo de tornar o treinamento de voo mais acessível, realista e eficaz no Brasil.
+                            {t('about_desc_1')}
                         </p>
                         <p className="mt-4 text-lg text-mfsim-grey">
-                            Cada componente é projetado e montado em nossa sede em São José dos Campos, o maior polo tecnológico aeroespacial da América Latina. Unimos tecnologia de ponta e um rigoroso controle de qualidade para criar simuladores que não apenas replicam, mas elevam a experiência de voo.
+                            {t('about_desc_2')}
                         </p>
                         
                         <h2 className="text 3x1 sm:text-4xl lg:text-5xl font-bold text-white" style={{ marginTop: '1.5rem' }}>
-                            Quem Somos:
+                            {t('about_who_we_are_title')}
                         </h2>
                         <p className="mt-4 text-lg text-mfsim-grey">
-                            A MFSim é uma empresa nacional associada ao Cluster Aeroespacial Brasileiro, especializada na área de simuladores de voo homologados e pessoais, com tecnologias de hardware e software próprios que oferecem uma experiência fiel  no voo simulado para Flight Simulator e Xplane.
-                            Os simuladores possuem aviônicos essenciais para o treinamento e procedimentos de voo por instrumentos (IFR), oferecendo a alunos de aeroclubes e entusiastas um meio pratico de estudos e para pilotos formados, o aprimoramento de suas habilidades.
+                            {t('about_who_we_are_desc')}
                         </p>
                     </motion.div>
                     {/* Coluna do Player do YouTube */}

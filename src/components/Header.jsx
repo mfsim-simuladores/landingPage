@@ -128,9 +128,9 @@ const Header = () => {
                 </nav>
 
                 <div className="hidden md:flex items-center gap-6">
-                    <Link to="/contato">
-                        <Button>{t('btn_solicitar_orcamento')}</Button>
-                    </Link>
+                    <Button asChild>
+                        <a href="https://wa.me/5512997356422" target="_blank" rel="noopener noreferrer">{t('btn_solicitar_orcamento')}</a>
+                    </Button>
                     <LanguageSwitcher />
                 </div>
 
@@ -160,11 +160,11 @@ const Header = () => {
                             )
                         )}
                         <LanguageSwitcher isMobile={true} />
-                        <Link to="/contato" className="w-full">
+                        <a href="https://wa.me/5512997356422" target="_blank" rel="noopener noreferrer" className="w-full">
                             <button className="bg-mfsim-cyan hover:bg-cyan-500 text-mfsim-dark font-bold py-3 px-6 rounded-lg w-full mt-4 transition-colors">
                                 {t('btn_solicitar_orcamento')}
                             </button>
-                        </Link>
+                        </a>
                     </nav>
                 </motion.div>
             )}

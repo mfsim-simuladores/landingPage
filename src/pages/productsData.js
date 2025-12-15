@@ -1,4 +1,16 @@
 export const products = [
+    // 1
+    {
+        name: 'SMC208',
+        id: 'SMC208',
+        imageText: 'SIMULADOR CESSNA CARAVAN C208',
+        description: 'Simulador capaz de reproduzir procedimentos IFR, familiarização e sistemas baseados na aeronave real.',
+        imageAlt: 'Simulador Cessna Caravan C208 em ambiente escuro.',
+        imageSrc: "/imagens/SMC208.jpg",
+        pricing: {
+            price: 'Sob Consulta'
+        }
+    },
     // 2
     {
         name: 'SMB58 G1000',
@@ -472,6 +484,7 @@ export const products = [
         id: "SMG1000c",
         imageText: "SIMULADOR G1000 CUSTOM",
         imageSrc: "/imagens/G1000c.png",
+        videoId: `Hwzq8mHr14Q`,
         description: "Simulador GlassCockpit, com PFD e MFD, alta tecnologia para um aviônico completo.",
         imageAlt: "Simulador G1000 Custom da MFSim",
         details: [
@@ -539,12 +552,39 @@ export const products = [
         imageText: "MFSim - AS350 KIT",
         imageSrc: "/imagens/KITAS350.jpg",
         imageAlt: "AS350 KIT da MFSim",
+        description: `Comandos de voo para asa rotativa, com alta precisção e robustez!`,
         details: [
             {
-                title: "Descrição Principal",
-                content: `A fim de facilitar para você, a MFSim oferece painéis modulares, podendo ser adquiridos separadamente de acordo com sua necessidade.
+                title: "",
+                content: {
+                    paragraphs: [ `A fim de facilitar para você, a MFSim oferece painéis modulares, podendo ser adquiridos separadamente de acordo com sua necessidade.
                 Sistema completo para seu voo!
-                Kit completo de comandos para helicoptero, baseado na aeronave AS350.`
+                Kit completo de comandos para helicoptero, baseado na aeronave AS350.`],
+                list: [
+                `Comando de ciclico com 6 botões, 1 gatilho e 2 hat switchs, Iluminação azul na base, comandos leves e precisos.`,
+                `Comando de coletivo com 3 chaves toggles e 1 hat switch, manipulo para ajuste de fricção, base com fixadores para suporte de cadeira ou banco, comando leve e preciso.`,
+                `Comando de pedal fabricado em metal, borracha e fita anti-derrapante, comandos leves e precisos.`]
+                }
+            },
+            {
+                title: "Requisitos Técnicos",
+                content: {
+                    paragraphs: [ `Para funcionamento do painel completo:`],
+                    list: [ `3 portas USB disponíveis`] 
+                }
+            },
+            {
+                title: "Incluso no Pacote",
+                content: {
+                    paragraphs: [ `* Sob condições e horários definidos pelo fabricante. ** Consulte áreas atendidas para frete gratuito.`],
+                    list: [
+                        `Suporte à instalação remota*`,
+                        `Softwares e licenças de operação`,
+                        `Frete grátis para regiões cobertas**`,
+                        `Manual técnico detalhado com instruções e mapeamento dos comandos`,
+
+                    ]
+                }  
             }
         ],
         pricing: {
@@ -576,31 +616,94 @@ export const products = [
         imageText: 'MFSim - Radio Stack + GNS430',
         imageSrc: '/imagens/Radios.jpg',
         imageAlt: 'Módulo de Rádios da MFSim',
+        videoId: `_bzFuqH14SE`,
         description: 'Aviônico completo com frequências de comunicação, navegação, incluindo autopilot e sistema de GNS430 completo.',
         details: [
             {
-                title: 'Descrição Principal',
-                content: 'Módulo de comunicação e navegação completo, incluindo COM1/COM2, NAV1/NAV2, ADF, DME e Transponder.'
+                title: '',
+                content: `A fim de facilitar para você, a MFSim oferece painéis modulares, podendo ser adquiridos separadamente de acordo com sua necessidade.\n\nCompativel com IVAO e VATSIM ✅\nAudio Switch, COM1 / NAV1 , GNS430, COM2 NAV2, ADF, DME1/2, Xponder e Autopilot.`
+
+            },
+            {
+                title: 'Requisitos Técnicos',
+                content: {
+                    paragraphs: [ `Para funcionamento do painel completo:`],
+                    list: [ `1 porta USB disponível;`, `1 saída de vídeo (HDMI)`]
+                }
+            },
+            {
+                title: 'Incluso no Pacote',
+                content: {
+                    paragraphs: [ `* Sob condições e horários definidos pelo fabricante. ** Consulte áreas atendidas para frete gratuito.`],
+                    list: [
+                        `Suporte à instalação remota*`,
+                        `Softwares e licenças de operação`,
+                        `Frete grátis para regiões cobertas**`,
+                        `Manual técnico detalhado com instruções e mapeamento dos comandos`,
+
+                    ]
+                }
             }
         ],
         pricing: {
-            price: 'R$ 2.600,00'
+            items: [
+                {
+                    name: 'MFSim Radio Stack + GNS430',
+                    price: 'R$ 2.600,00',
+                    description: 'À vista ou até 12x (consultar valor)'
+                }
+            ]
+           
         }
     },
 
-    // 11 
+    // 11
     {
         name: "GNS430",
         id: "GNS430",
         imageText: "MFSim - GNS430",
         imageSrc: "/imagens/GNS430.jpg",
+        videoId: `WaWB7Iver38`,
         description: "Equipamento de navegação, COM1/NAV1 compatível com Xplane, FSX e Prepar3D.",
         imageAlt: "GNS430 da MFSim",
         details: [
             {
-                title: "Descrição Principal",
-                content: "Equipamento de navegação, COM1/NAV1 compatível com Xplane, FSX e Prepar3D."
-            }
+                title: "",
+                content: `O MFSim GNS430 é um módulo de navegação GPS completo, projetado para reproduzir com fidelidade o comportamento do Garmin GNS430 real.
+                Totalmente funcional e compatível com as principais plataformas de simulação Microsoft Flight Simulator e X-Plane.`
+                },
+                {
+                    title: "Realismo e Integração Completa",
+                    content: {
+                        paragraphs: [ `Com interface e controles idênticos ao equipamento original, o MFSim GNS430 é integrado ao sistema GPS da própria plataforma, reproduzindo:`],
+                        list: [ `Mapas de navegação em tempo real;`, `COM1 e NAV1 totalmente operacionais;`,`Funções completas de rota, aproximação e comunicação;`,`Compatibilidade com o RealityXP GNS430 para simulação de alto nível.`]
+                    }
+                },
+                {
+                    title: "Requisitos Técnicos",
+                    content: {
+                        paragraphs: [ `Para funcionamento do painel completo:`],
+                        list: [ `1 porta USB disponível;`, `1 saída de vídeo (HDMI)`]
+                    }
+                },
+                {
+                    title: "Incluso no Pacote",
+                    content: { 
+                        paragraphs: [ `* Sob condições e horários definidos pelo fabricante. ** Consulte áreas atendidas para frete gratuito.`],
+                        list: [
+                            `Suporte à instalação remota*`,
+                            `Softwares e licenças de operação`,
+                            `Frete grátis para regiões cobertas**`,
+                            `Manual técnico detalhado com instruções e mapeamento dos comandos`,
+
+                        ]
+                    }
+                },
+                {
+                    title: "Versão HOME",
+                    content: `Este equipamento é destinado a uso não homologável, voltado a simulação recreativa ou treinamento doméstico.
+                    Para versões certificadas ou integradas a simuladores profissionais, entre em contato com a MFSim.`
+                }
         ],
         pricing: {
             price: "R$ 2.600,00"
@@ -617,14 +720,54 @@ export const products = [
         imageAlt: 'Manche Yoke da MFSim',
         details: [
             {
-                title: 'Descrição Principal',
-                content: 'Manche tipo Yoke de alta precisão, com construção robusta em metal e sensores de efeito Hall para máxima durabilidade e realismo.'
+                title: '',
+                content: `O MFSim SMY172CUSTOM é um conjunto completo de comandos principais, construído em estrutura metálica e frente revestida em couro, garantindo durabilidade, ergonomia e realismo em cada detalhe.`
+            },
+            {
+                title: `Painéis Modulares`,
+                content: `A MFSim oferece um sistema totalmente modular, permitindo que cada painel seja adquirido separadamente, conforme sua necessidade ou espaço disponível. Monte seu cockpit sob medida e expanda seu simulador com facilidade.
+                Sistema perfeito para sua simulaçao!
+                Compatível com os principais simuladores do mercado:
+                Microsoft Flight Simulator 2020/24, X-Plane 11/12 e Prepar3D.`
+            },
+            {
+                title: 'Recursos e Controles',
+                content: {  
+                    paragraphs: [ `O sistema inclui todos os comandos essenciais para uma experiência de voo realista:`],
+                    list: [`Yoke modelo Cessna com movimentos de 90 graus para cada lado do aileron (totalizando 180 graus), 120mm de comando de profundor`,
+                        `Manetes de potência, passo e mistura`,
+                        `Master Battery, Alternator e Avionics`,
+                        `Chaves de luzes (Beacon, Nav, Taxi, Landing, Strobe)`,
+                        `Fuel Pump, Pitot Heat, Flaps, Landing Gear e Parking Brake`,
+                        `Elevator Trim, Fuel Selector e Cutoff`
+                    ]
+                }
+            },
+            {
+                title: 'Requisitos Técnicos',
+                content: {
+                    paragraphs: [ `Para funcionamento do painel completo:`],
+                    list: [ `1 porta USB disponível`]
+                }
+            },
+            {
+                title: 'Incluso no Pacote',
+                content: {
+                    paragraphs: [ `* Sob condições e horários definidos pelo fabricante. ** Consulte áreas atendidas para frete gratuito.`],
+                    list: [
+                        `Suporte à instalação remota*`,
+                        `Softwares e licenças de operação`,
+                        `Frete grátis para regiões cobertas**`,
+                        `Manual técnico detalhado com instruções e mapeamento dos comandos`,
+
+                    ]
+                }
             }
         ],
         pricing: {
             items: [
                 { 
-                    name: 'Manche Yoke Simples',
+                    name: 'SMY172 CUSTOM',
                     price: 'R$ 4.000,00' ,
                     description: 'À vista ou até 12x (consultar valor)'
                 }
@@ -643,12 +786,46 @@ export const products = [
         imageAlt: "Manche Yoke da MFSim",
         details: [
             {
-                title: "Descrição Principal",
-                content: "Manche Yoke inspirado no Boeing 737, oferecendo uma experiência de voo autêntica com construção robusta e controles precisos."
+                title: "",
+                content: {
+                    paragraphs: [ `Com o Yoke 737 seu voo fica ainda melhor! Sinta as emoções de ter o controle de um Boeing 737 em suas mãos.`],
+                    list: [`Sistema com rolamentos, dando melhor precisão nos movimentos;`,
+                        `Comandos macios e ótima sensibilidade;`,
+                        `Em escala real;`,
+                        `Comando de elevator trim + 4 botoes customizáveis(AP DESENGAGE, PTT, CAMERA, IVAP STANDBY/MODO C, etc).`,
+                        `Plug&Play;`,
+                        `Compatível com XPLANE, PREPAR3D, FSX, AEROFLY, entre outros.`]
+                }
+            },
+            {
+                title: "Requisitos Técnicos",
+                content: {
+                    paragraphs: [ `Para funcionamento do painel completo:`],
+                    list: [ `1 porta USB disponível`]
+                }
+            },
+            {
+                title: "Incluso no Pacote",
+                content: {
+                    paragraphs: [ `* Sob condições e horários definidos pelo fabricante. ** Consulte áreas atendidas para frete gratuito.`],
+                    list: [
+                        `Suporte à instalação remota*`,
+                        `Softwares e licenças de operação`,
+                        `Frete grátis para regiões cobertas**`,
+                        `Manual técnico detalhado com instruções e mapeamento dos comandos`,
+
+                    ]
+                }
             }
         ],
         pricing: {
-            price: "R$ 4.000,00"
+            items: [
+                {
+                    name: "737 YOKE",
+                    description: "À vista ou até 12x (consultar valor)",    
+                    price: "R$ 4.000,00"
+                }
+            ]
         }
     },
 
@@ -662,8 +839,45 @@ export const products = [
         imageAlt: "Autopilot GFC700 da MFSim",
         details: [
             {
-                title: "Descrição Principal",
-                content: "Piloto automatico completo Plug&Play",
+                title: "",
+                content: `O MFSim GFC700 AP é o piloto automático definitivo para sua simulação de voo.
+                Inspirado no sistema GFC700 real, ele entrega precisão, realismo e integração total com os principais simuladores do mercado.`,
+            },
+            {
+                title: `Eleve seu realismo`,
+                content: `Não perca tempo — transforme sua experiência de voo com o MFSim GFC700 AP e sinta o controle de um verdadeiro piloto automático profissional.`
+            },
+            {
+                title: `Design Modular e Compatibilidade`,
+                content: {
+                    paragraphs: [ `A MFSim oferece painéis modulares, permitindo que cada componente seja adquirido separadamente, de acordo com sua necessidade ou espaço disponível.
+                        Monte seu painel de voo de forma personalizada e profissional. O GFC700 é um piloto automático plug & play, com todas as funções operacionais e ajustes finos para o seu perfil de voo.
+                        Ideal para aeronaves equipadas com glass cockpit, sendo amplamente utilizado em jatos leves e aeronaves de aviação geral.`],
+                    list: [ `Totalmente funcional em aeronaves que possuam suporte a piloto automático nos simuladores X-Plane 11/12 e Microsoft Flight Simulator 2020/24.`,
+                        `Sistema de backlight ajustável que garante conforto visual e realismo durante voos noturnos.`,
+                        `Compatível com Zibo, PMDG, Airbus, Cessna, Baron, Caravan, entre outros modelos.`
+                    ]
+                }
+            },
+            {
+                title: `Requisitos Técnicos`,
+                content: {
+                    paragraphs: [ `Para funcionamento do painel completo:`],
+                    list: [ `1 porta USB disponível`]
+                }
+            },
+            {
+                title: `Incluso no Pacote`,
+                content: {
+                    paragraphs: [ `* Sob condições e horários definidos pelo fabricante. ** Consulte áreas atendidas para frete gratuito.`],
+                    list: [
+                        `Suporte à instalação remota*`,
+                        `Softwares e licenças de operação`,
+                        `Frete grátis para regiões cobertas**`,
+                        `Manual técnico detalhado com instruções e mapeamento dos comandos`,
+
+                    ]
+                }
             }
         ],
         pricing: {
@@ -677,7 +891,6 @@ export const products = [
         }
     },
 
-
     // 15
     {
         name: "Rudder Pedal Single",
@@ -688,12 +901,63 @@ export const products = [
         imageAlt: "Pedal Rudder da MFSim",
         details: [
             {
-                title: "Descrição Principal",
-                content: "Pedais de leme com sistema de freios diferenciais, oferecendo controle preciso em solo e no ar."
+                title: "",
+                content: `O MFSim Pedal Single foi desenvolvido para proporcionar controle preciso, suavidade e realismo absoluto durante o voo.
+                Com estrutura metálica reforçada e sistema de rolamentos industriais, entrega a sensação autêntica de pilotagem — especialmente em pousos com vento cruzado e manobras de solo.`
+            },
+            {
+                title: "Desempenho e Sensação Real",
+                content: { 
+                    paragraphs: [`O sistema foi projetado para oferecer resposta linear e equilíbrio perfeito entre conforto e controle:`],
+                    list: [`Sistema com rolamentos para movimentos suaves e precisos;`,
+                        `Construção 100% metálica, garantindo robustez e longa durabilidade;`,
+                        `Comandos macios e precisos, proporcionando controle refinado de direção e frenagem;`,
+                        `Freios independentes e progressivos (esquerdo e direito);`,
+                        `Operação Plug & Play, pronta para uso imediato.`
+                    ]
+                }
+            },
+            {
+                title: `Compatibilidade`,
+                content: {
+                    paragraphs: [`Compatível com as principais plataformas de simulação:`],
+                    list:[`X-Plane`, `Microsoft Flight Simulator 2020/24`, `Prepar3D`, `FSX`, `Aerofly`]
+                }
+            },
+            {
+                title: "Requisitos Técnicos",
+                content: {
+                    paragraphs: [ `Para funcionamento do painel completo:`],
+                    list: [ `1 porta USB disponível`]
+                }
+            },
+            {
+                title: "Incluso no Pacote",
+                content: {
+                    paragraphs: [ `* Sob condições e horários definidos pelo fabricante. ** Consulte áreas atendidas para frete gratuito.`],
+                    list: [
+                        `Suporte à instalação remota*`,
+                        `Softwares e licenças de operação`,
+                        `Frete grátis para regiões cobertas**`,
+                        `Manual técnico detalhado com instruções e mapeamento dos comandos`,
+
+                    ]
+                }
+            },
+            {
+                title: "Versão HOME",
+                content: `Este equipamento é destinado a uso não homologável, ideal para simuladores domésticos ou de treinamento recreativo.
+                Para a versão certificada, entre em contato com a equipe técnica da MFSim.`
             }
         ],
         pricing: {
-            price: "R$ 1.900,00"
+            items: [
+                {
+                    name: "Rudder Pedal Single",
+                    description: "À vista ou até 12x (consultar valor)",
+                    price: "R$ 1.900,00"
+                }
+            ]
         }
     },
 
@@ -707,12 +971,54 @@ export const products = [
         imageAlt: "Pedal Rudder da MFSim",
         details: [
             {
-                title: "Descrição Principal",
-                content: "Pedais de leme com sistema de freios diferenciais, oferecendo controle preciso em solo e no ar."
+                title: "",
+                content: `A fim de facilitar para você, a MFSim oferece painéis e avionicos modulares, podendo ser adquiridos separadamente de acordo com sua necessidade.`
+            },
+            {
+                title: "",
+                content: {
+                    paragraphs: [`Com o pedal seu voo fica ainda melhor!
+                    Sinta as emoções de pousar com ventos e ter o controle da aeronave completa.`],
+                    list: [`Sistema com rolamentos, dando melhor precisão nos movimentos;`,
+                        `Fabricado todo em estrutura de metal, com alta robustez e durabilidade;`,
+                        `Comandos macios, precisos e ótima sensibilidade;`,
+                        `Duplo sincronizado;`,
+                        `Freios independentes e graduais (Freio esuqerdo e direito).`,
+                        `Plug&Play;`,
+                        `Compatível com XPLANE, MSFS2020, PREPAR3D, FSX, AEROFLY, entre outros.`
+                        
+                    ]
+                }
+            },
+            {
+                title: "Requisitos Técnicos",
+                content: {
+                    paragraphs: [ `Para funcionamento do painel completo:`],
+                    list: [ `1 porta USB disponível`]
+                }
+            },
+            {
+                title: "Incluso no Pacote",
+                content: {
+                    paragraphs: [ `* Sob condições e horários definidos pelo fabricante. ** Consulte áreas atendidas para frete gratuito.`],
+                    list: [
+                        `Suporte à instalação remota*`,
+                        `Softwares e licenças de operação`,
+                        `Frete grátis para regiões cobertas**`,
+                        `Manual técnico detalhado com instruções e mapeamento dos comandos`,
+
+                    ]
+                }
             }
         ],
         pricing: {
-            price: "R$ 3.400,00"
+            items: [
+                {
+                    name: "RUDDER PEDAL (DUPLO)",
+                    description: "À vista ou até 12x (consultar valor)",
+                    price: "R$ 3.400,00"
+                }
+            ]
         }
     },
 ];

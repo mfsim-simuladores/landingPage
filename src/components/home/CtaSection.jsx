@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { Button } from '../ui/button';
 import { useToast } from '../ui/use-toast';
 
 const CtaSection = () => {
     const { toast } = useToast();
+    const { t } = useTranslation();
 
     const handleNotImplemented = () => {
       toast({
@@ -23,13 +25,13 @@ const CtaSection = () => {
                     transition={{ duration: 0.7 }}
                     className="cta-gradient rounded-2xl p-10 md:p-16 text-center shadow-2xl shadow-mfsim-blue/30"
                 >
-                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white">Pronto para Decolar?</h2>
+                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white">{t('cta_title')}</h2>
                     <p className="mt-4 max-w-2xl mx-auto text-lg text-white/90">
-                        Fale com um de nossos especialistas e descubra a configuração ideal para suas necessidades. Solicite um orçamento sem compromisso e comece a voar mais alto.
+                        {t('cta_desc')}
                     </p>
                     <div className="mt-8">
                         <Button size="lg" variant="outline" className="bg-white text-mfsim-blue hover:bg-gray-200 hover:text-mfsim-blue border-transparent" onClick={handleNotImplemented}>
-                            Solicitar Orçamento Agora
+                            {t('cta_button')}
                         </Button>
                     </div>
                 </motion.div>

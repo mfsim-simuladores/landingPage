@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import { products as productsEnList } from '../../pages/productsDataEn';
 import { products } from '../productsData';
 import { Button } from '../ui/button';
 import { useToast } from '../ui/use-toast';
-
-const homeProducts = products.slice(0, 6);
 
 const cardVariants = {
     offscreen: { scale: 0.9, opacity: 0 },
@@ -22,6 +22,9 @@ const cardVariants = {
 
 const Products = () => {
     const { toast } = useToast();
+    const { t, i18n } = useTranslation();
+    const currentProducts = i18n.language === 'en' ? productsEnList : products;
+    const homeProducts = currentProducts.slice(0, 6);
 
     const handleNotImplemented = () => {
         toast({
@@ -41,9 +44,9 @@ const Products = () => {
                     transition={{ duration: 0.6 }}
                     className="text-center"
                 >
-                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">Nossos Simuladores e Módulos</h2>
+                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">{t('products_page_title')}</h2>
                     <p className="mt-4 max-w-2xl mx-auto text-lg text-mfsim-grey">
-                        Escolha a solução completa ou monte seu setup ideal peça por peça. A qualidade é a mesma.
+                        {t('products_page_desc')}
                     </p>
                 </motion.div>
 
@@ -73,7 +76,7 @@ const Products = () => {
                                     <div className="mt-6">
                                         <span className="text-lg font-semibold text-mfsim-cyan">{product.price}</span>
                                         <Button asChild className="w-full mt-4">
-                                            <span>Ver Detalhes</span>
+                                            <span>{t('products_btn_details')}</span>
                                         </Button>
                                     </div>
                                 </div>
@@ -84,7 +87,7 @@ const Products = () => {
 
                 <div className="mt-16 text-center">
                     <Link to="/produtos">
-                        <Button size="lg" className="bg-mfsim-cyan hover:bg-mfsim-cyan/90 text-mfsim-dark font-bold text-lg px-8 py-6">Ver todos os produtos</Button>
+                        <Button size="lg" className="bg-mfsim-cyan hover:bg-mfsim-cyan/90 text-mfsim-dark font-bold text-lg px-8 py-6">{t('home_products_btn_all')}</Button>
                     </Link>
                 </div>
             </div>

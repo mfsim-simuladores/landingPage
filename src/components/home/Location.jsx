@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion';
 import { MapPin } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Button } from '../ui/button';
 
 const Location = () => {
+    const { t } = useTranslation();
     const googleMapsUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3668.049405629193!2d-45.78985182468301!3d-23.168593478971485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cc4555cf643379%3A0x6a38612a2e12e1a3!2sMFSim%20Simuladores%20de%20Voo!5e0!3m2!1spt-BR!2sbr!4v1725822000000!5m2!1spt-BR!2sbr";
-    const businessAddress = "Avenida Doutor Altino Bondensan, 500 - Distrito de Eugênio de Melo, São José dos Campos - SP, 12247-016";
 
     return (
         <section className="py-12 sm:py-20 bg-mfsim-dark">
@@ -18,7 +19,7 @@ const Location = () => {
                 >
                     
                     <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-                        Onde Estamos
+                        {t('location_title')}
                     </h2>
 
                     {/* NOVO BLOCO PARA AS LOGOS LADO A LADO */}
@@ -51,7 +52,7 @@ const Location = () => {
                     </motion.div>
 
                     <p className="mt-4 max-w-3xl mx-auto text-lg text-mfsim-grey">
-                        Instalados no Parque Tecnológico de São José dos Campos - SP, desde 2019, fazemos parte do programa de incubação criado para empresas de tecnologia, chamado Nexus Hub.
+                        {t('location_desc')}
                     </p>
                 </motion.div>
 
@@ -83,14 +84,11 @@ const Location = () => {
                         transition={{ duration: 0.7, ease: "easeOut" }}
                     >
                         <div className="bg-gray-900/40 p-8 rounded-xl">
-                            <h3 className="text-2xl font-bold text-white mb-4">Nosso Endereço</h3>
+                            <h3 className="text-2xl font-bold text-white mb-4">{t('location_address_title')}</h3>
                             <div className="flex items-start">
                                 <MapPin className="w-6 h-6 mr-4 mt-1 flex-shrink-0 text-mfsim-cyan" />
-                                <p className="text-mfsim-grey">
-                                    Avenida Doutor Altino Bondensan, 500<br/>
-                                    Distrito de Eugênio de Melo<br/>
-                                    CEP: 12247-016<br/>
-                                    São José dos Campos - SP - Brasil
+                                <p className="text-mfsim-grey whitespace-pre-line">
+                                    {t('location_address_text')}
                                 </p>
                             </div>
                             <Button 
@@ -99,7 +97,7 @@ const Location = () => {
                                 className="w-full mt-6"
                             >
                                 <a href="https://maps.app.goo.gl/wQ1gE6dYpG7Z9f4r5" target="_blank" rel="noopener noreferrer">
-                                    Ver no Google Maps
+                                    {t('location_btn_maps')}
                                 </a>
                             </Button>
                         </div>

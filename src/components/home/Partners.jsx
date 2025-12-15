@@ -1,5 +1,6 @@
 import { motion, useAnimationFrame, useMotionValue } from 'framer-motion';
 import { useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const partnerLogos = [
     // Seus logos com a propriedade 'important: true' e 'link'
@@ -38,6 +39,7 @@ const partnerLogos = [
 ];
 
 const Partners = () => {
+    const { t } = useTranslation();
     // Mesma lógica de separação de logos
     const importantLogos = partnerLogos.filter(logo => logo.important);
     const otherLogos = partnerLogos.filter(logo => !logo.important);
@@ -105,10 +107,10 @@ const Partners = () => {
                     className="text-center mb-16" // Adicionado mb-16 para espaço
                 >
                     <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-                        Confiança que Impulsiona a <span className="text-mfsim-cyan">Inovação</span>
+                        {t('partners_title_prefix')} <span className="text-mfsim-cyan">{t('partners_title_suffix')}</span>
                     </h2>
                     <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-400"> {/* Cor do texto ajustada */}
-                        Fazemos parte de um ecossistema de clientes e parceiros que são referência em tecnologia e aviação.
+                        {t('partners_desc')}
                     </p>
                 </motion.div>
 

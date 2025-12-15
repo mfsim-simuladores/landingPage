@@ -1,25 +1,28 @@
 import { motion } from 'framer-motion';
 import { Rocket, Target, Users } from 'lucide-react';
-
-const values = [
-    {
-        icon: <Rocket className="h-8 w-8 text-mfsim-cyan" />,
-        title: "Inovação Contínua",
-        description: "Buscamos incansavelmente as tecnologias mais avançadas para garantir que seu treinamento seja sempre à frente do tempo."
-    },
-    {
-        icon: <Target className="h-8 w-8 text-mfsim-cyan" />,
-        title: "Precisão Absoluta",
-        description: "Nossa engenharia é focada em replicar cada detalhe do voo com máxima fidelidade, do hardware ao software."
-    },
-    {
-        icon: <Users className="h-8 w-8 text-mfsim-cyan" />,
-        title: "Parceria com o Cliente",
-        description: "Oferecemos suporte completo e customizado, entendendo que o seu sucesso é o nosso destino final."
-    }
-];
+import { useTranslation } from 'react-i18next';
 
 const Mission = () => {
+    const { t } = useTranslation();
+
+    const values = [
+        {
+            icon: <Rocket className="h-8 w-8 text-mfsim-cyan" />,
+            title: t('mission_value_1_title'),
+            description: t('mission_value_1_desc')
+        },
+        {
+            icon: <Target className="h-8 w-8 text-mfsim-cyan" />,
+            title: t('mission_value_2_title'),
+            description: t('mission_value_2_desc')
+        },
+        {
+            icon: <Users className="h-8 w-8 text-mfsim-cyan" />,
+            title: t('mission_value_3_title'),
+            description: t('mission_value_3_desc')
+        }
+    ];
+
     return (
         <section className="py-12 sm:py-20 bg-mfsim-dark overflow-hidden">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 transform scale-90 origin-top">
@@ -34,7 +37,7 @@ const Mission = () => {
                     >
                         <img 
                             src="/partners/IMG_8768.png" // Sugestão de imagem
-                            alt="Piloto em um cockpit de avião olhando para o horizonte durante o pôr do sol"
+                            alt={t('mission_img_alt')}
                             className="w-full h-full object-cover"
                         />
                     </motion.div>
@@ -47,10 +50,10 @@ const Mission = () => {
                         transition={{ duration: 0.8, ease: "easeOut" }}
                     >
                         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-                            Nossa Missão é Impulsionar <span className="text-mfsim-cyan">Seu Potencial</span>
+                            {t('mission_main_title_prefix')} <span className="text-mfsim-cyan">{t('mission_main_title_suffix')}</span>
                         </h2>
                         <p className="mt-6 text-lg text-mfsim-grey">
-                            Mais do que simuladores, criamos ferramentas que capacitam pilotos e entusiastas a alcançarem a excelência. Combinamos paixão pela aviação com engenharia de precisão para entregar experiências que transformam o treinamento aéreo.
+                            {t('mission_main_desc')}
                         </p>
                         
                         <div className="mt-10 space-y-8">

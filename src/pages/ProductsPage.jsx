@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { Button } from '../components/ui/button';
 import { useToast } from '../components/ui/use-toast';
 import { products } from '../pages/productsData';
+import { products as productsEnList } from '../pages/productsDataEn';
 
 const cardVariants = {
     offscreen: { scale: 0.9, opacity: 0 },
@@ -20,12 +22,14 @@ const cardVariants = {
 
 const ProductsPage = () => {
     const { toast } = useToast();
+    const { t, i18n } = useTranslation();
+    const currentProducts = i18n.language === 'en' ? productsEnList : products;
 
     const handleComingSoon = (e) => {
         e.preventDefault();
         toast({
-            title: "Em Breve",
-            description: "🚧 Estamos finalizando os detalhes deste produto. Em breve estará disponível! 🚀",
+            title: t('toast_coming_soon_title'),
+            description: t('toast_coming_soon_desc'),
             variant: "default",
         });
     };
@@ -40,16 +44,16 @@ const ProductsPage = () => {
                     transition={{ duration: 0.6 }}
                     className="text-center"
                 >
-                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">Nossos Simuladores e Módulos</h2>
+                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">{t('products_page_title')}</h2>
                     <p className="mt-4 max-w-2xl mx-auto text-lg text-mfsim-grey">
-                        Escolha a solução completa ou monte seu setup ideal peça por peça. A qualidade é a mesma.
+                        {t('products_page_desc')}
                     </p>
                 </motion.div>
 
                 <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {products.map((product, i) => {
+                    {currentProducts.map((product, i) => {
                         // Lógica para garantir que preço e descrição apareçam, mesmo se a estrutura de dados variar
-                        const price = product.pricing?.price || product.price || (product.pricing?.items ? "Ver Opções" : "Sob Consulta");
+                        const price = product.pricing?.price || product.price || (product.pricing?.items ? t('products_btn_options') : t('products_btn_consult'));
                         const description = product.description || (typeof product.details?.[0]?.content === 'string' ? product.details[0].content.substring(0, 100) + '...' : '');
                     const isComingSoon = product.pricing?.price === "...";
 
@@ -82,7 +86,7 @@ const ProductsPage = () => {
                                     <div>
                                         
                                         <Button asChild className="w-full mt-4">
-                                            <span>Ver Detalhes</span>
+                                            <span>{t('products_btn_details')}</span>
                                         </Button>
                                     </div>
                                 </div>

@@ -1,28 +1,6 @@
 import { motion } from 'framer-motion';
 import { CheckCircle, HardDrive, Volume as Vr, Wrench } from 'lucide-react';
-
-const features = [
-    {
-        icon: <HardDrive className="h-10 w-10 text-mfsim-cyan" />,
-        title: 'Hardware de Ponta',
-        description: 'Componentes robustos e de alta fidelidade que replicam com perfeição os controles de aeronaves reais.',
-    },
-    {
-        icon: <Vr className="h-10 w-10 text-mfsim-cyan" />,
-        title: 'Imersão Total',
-        description: 'Sistemas visuais e sonoros que criam uma experiência de voo ultrarrealista e envolvente.',
-    },
-    {
-        icon: <Wrench className="h-10 w-10 text-mfsim-cyan" />,
-        title: 'Módulos Customizáveis',
-        description: 'Construa seu simulador por etapas, com módulos independentes e totalmente integráveis.',
-    },
-    {
-        icon: <CheckCircle className="h-10 w-10 text-mfsim-cyan" />,
-        title: 'Opção de Homologação',
-        description: 'Nossos equipamentos podem ser certificados para treinamento profissional de pilotos (ANAC).',
-    },
-];
+import { useTranslation } from 'react-i18next';
 
 const cardVariants = {
     offscreen: {
@@ -42,6 +20,31 @@ const cardVariants = {
 };
 
 const Features = () => {
+    const { t } = useTranslation();
+
+    const features = [
+        {
+            icon: <HardDrive className="h-10 w-10 text-mfsim-cyan" />,
+            title: t('features_hardware_title'),
+            description: t('features_hardware_desc'),
+        },
+        {
+            icon: <Vr className="h-10 w-10 text-mfsim-cyan" />,
+            title: t('features_immersion_title'),
+            description: t('features_immersion_desc'),
+        },
+        {
+            icon: <Wrench className="h-10 w-10 text-mfsim-cyan" />,
+            title: t('features_modules_title'),
+            description: t('features_modules_desc'),
+        },
+        {
+            icon: <CheckCircle className="h-10 w-10 text-mfsim-cyan" />,
+            title: t('features_certification_title'),
+            description: t('features_certification_desc'),
+        },
+    ];
+
     return (
         <section className="py-12 sm:py-20 bg-mfsim-dark">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 transform scale-90 origin-top">
@@ -53,10 +56,10 @@ const Features = () => {
                     className="text-center"
                 >
                     <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-                        Projetado para a <span className="text-mfsim-cyan">Máxima Performance</span>
+                        {t('features_main_title_prefix')} <span className="text-mfsim-cyan">{t('features_main_title_suffix')}</span>
                     </h2>
                     <p className="mt-4 max-w-2xl mx-auto text-lg text-mfsim-grey">
-                        Cada detalhe dos nossos simuladores foi pensado para oferecer a experiência mais autêntica e confiável do mercado.
+                        {t('features_main_desc')}
                     </p>
                 </motion.div>
 
